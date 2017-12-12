@@ -3,14 +3,14 @@ jQuery(function ($) {
 
 
     /*--scroll to top on refresh and init fullpage plugin--*/
-    $(document).ready(function () {
+    $(function () {
         $(this).scrollTop(0);
         $('#fullpage').fullpage();
     });
 
     /*--extend sidemenu on hover--*/
     $('#mySidenav').hover(function () {
-        $(this).stop(true, false).animate({
+        $(this).stop().animate({
             width: "290px"
         }, 100, "linear");
     }, function () {
@@ -20,11 +20,9 @@ jQuery(function ($) {
     });
 
     $('#mySidenav').hover(function () {
-        $('p').removeClass('hidden');
-        $('p').addClass('fadeInLeft');
-        $('p').removeClass('fadeOutLeft')
+        $('div.sidenav p').removeClass('hidden fadeOutLeft').addClass('fadeInLeft');
     }, function () {
-        $('p').addClass('fadeOutLeft')
+        $('div.sidenav p').addClass('fadeOutLeft')
     });
 
 
